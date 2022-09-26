@@ -7,7 +7,29 @@ import AddTodo from './components/AddNumber'
 import NumberCard from './components/NumberCard'
 
 function App() {
-  const [numberList, setNumberList] = useState<any[]>([])
+  const [numberList, setNumberList] = useState<any[]>([
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+    { MyNumber: '12345' },
+  ])
 
   useEffect(() => {
     WebFont.load({ google: { families: ['Prompt'] } })
@@ -32,11 +54,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1 className="text-4xl mb-12">Tell me a number</h1>
         <AddTodo onDone={getAllNumbers}/>
 
         <div className="h-px w-3/6 bg-gradient-to-r from-transparent via-slate-50 to-transparent my-6 mx-auto"/>
 
-        <div className="">
+        <div className="h-96 overflow-auto">
           {listNumbers()}
         </div>
       </header>
