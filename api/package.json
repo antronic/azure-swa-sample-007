@@ -17,10 +17,5 @@
     "@azure/functions": "^3.0.0",
     "@types/node": "16.x",
     "typescript": "^4.0.0"
-  },
-  "eslintConfig": {
-    "rules": {
-      "@typescript-eslint/no-unused-vars": "off"
-    }
   }
 }

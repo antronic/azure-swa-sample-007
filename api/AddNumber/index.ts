@@ -11,8 +11,9 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     context.bindings.outputTable = []
     context.bindings.outputTable.push({
         PartitionKey: "demoDay1",
-        RowKey: 'x1234',
+        RowKey: rowKey.toString(),
         MyNumber: number.toString(),
+        Name: "Anonymous"
     })
 
     context.res = {
