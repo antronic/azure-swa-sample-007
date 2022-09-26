@@ -2,7 +2,9 @@ import axios from 'axios'
 import { useState } from 'react'
 import styled from 'styled-components'
 
-interface IProps {}
+interface IProps {
+  onDone: any
+}
 
 const AddTodo: React.FC<IProps> = (props) => {
   const [number, setNumber] = useState('')
@@ -13,6 +15,8 @@ const AddTodo: React.FC<IProps> = (props) => {
 
   async function addNumber() {
     await axios.post('/api/AddNumber', { number })
+    setNumber('')
+    props.onDone()
   }
 
   return (
@@ -20,8 +24,10 @@ const AddTodo: React.FC<IProps> = (props) => {
       <input
         type="text"
         onChange={handleInputChange}
+        value={number}
         className="bg-slate-50 px-4 py-2 text-slate-800 rounded-md placeholder:text-slate-300 font-prompt shadow-md"
         placeholder="ใส่เลขที่เห็นจากนิมิต..."
+        pattern='[0-9]+'
       />
 
       <button
